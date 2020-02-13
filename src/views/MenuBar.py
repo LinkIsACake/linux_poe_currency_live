@@ -24,4 +24,4 @@ class MenuBar(Menu):
 
         menuaction.add_command(label="Save",command=controller.save)
         menuaction.add_command(label="Quit",command=controller.quit)
-
+        menuaction.add_command(label="About",command=controller.about)

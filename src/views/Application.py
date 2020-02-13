@@ -22,7 +22,7 @@ class Application(Tk):
         self.menubar = MenuBar(self,controller)
         self.config(menu=self.menubar)
 
-        self.currencySelector = CurrencySelector(self)
+        self.currencySelector = CurrencySelector(self,controller.categories)
 
     def start(self):
         self.mainloop()

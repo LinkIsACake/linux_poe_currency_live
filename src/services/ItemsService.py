@@ -7,11 +7,13 @@ class ItemsService:
 
     @staticmethod
     def getCurrency():
-        response = requests.get(ItemsService.url_get_currency)
-        if response.status_code == 200:
-            return [[currency["name"], currency["id"]] for currency in response.json()]
-        else:
-            print("Error request", response.status_code)
+        try:
+            response = requests.get(ItemsService.url_get_currency)
+            if response.status_code == 200:
+                return [[currency["name"], currency["id"]] for currency in response.json()]
+        except requests.exceptions.ConnectionError:
+            return None
+        return None
 
     @staticmethod
     def getItem(id):
@@ -19,4 +21,4 @@ class ItemsService:
         if response.status_code == 200:
             return response.json()
         else:
-            print("Error request", response.status_code)
+            return None

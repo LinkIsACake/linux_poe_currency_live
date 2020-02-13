@@ -19,7 +19,7 @@ class Categorie(Frame):
             row=self.row,
             column=self.collumns)
         )
-        if self.row == 10:
+        if self.row == 20:
             self.collumns+=1
             self.row = 0
         else:

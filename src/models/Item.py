@@ -27,3 +27,4 @@ class Currency:
         self.name = name
         self.id = id
         self.type = Currency.get_type(name)
+
